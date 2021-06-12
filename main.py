@@ -13,6 +13,7 @@ import pygame
 import os
 import time
 import random
+from fundo import Fundo
 
 # Função que abilita o uso de diferentes fontes do pygame;
 pygame.font.init() 
@@ -24,12 +25,8 @@ pygame.mixer.init()
 Várias como nome em caixa alta não serão alteradas ao londo do nosso programa.
 """
 
-# Tamanho da tela
-WIDTH, HEIGHT = 750, 750
-
-# A variável WIN recebe o display do nosso jogo;
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Space Shooter Tutorial")
+# # Tamanho da tela
+# WIDTH, HEIGHT = 750, 750
 
 # Efeitos Sonoros - Música de fundo;
 music = pygame.mixer.music.load('futurama_theme.mp3')
@@ -57,3 +54,26 @@ smaller_explosion_sound = pygame.mixer.Sound('smaller_explosion.wav')
 
 # Volume do som da explosão "menor" (smaller)
 smaller_explosion_sound.set_volume(0.2) 
+
+class Jogo:
+    def tela(Fundo):
+        # Variavel run determina se o jogo está rodando ou não;
+        run = True
+        # Quantidade de frames por segundo;
+        FPS = 60
+        # Nível inicial do jogador;
+        level = 0
+        # Número de vidas iniciais;
+        lives = 5
+        # Isso vai ser importante para criar o loop do fundo;
+        y = 0
+        
+        # A variável WIN recebe o display do nosso jogo;
+        WIN = pygame.display.set_mode((Fundo.WIDTH, Fundo.HEIGHT))
+        
+        # Determinando uma legenda para o jogo;
+        pygame.display.set_caption("Space Shooter Tutorial")
+        
+    
+   
+    pass
