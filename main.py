@@ -15,56 +15,6 @@ from fundo import (BG, BG_2, BG_3, BG_4, WIDTH, HEIGHT, WIN)
 pygame.font.init()
 
 
-# Tamanho da tela
-#WIDTH, HEIGHT = 750, 750
-#WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-#pygame.display.set_caption("Space Shooter Tutorial")
-'''
-# Carregando as imagens
-RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_red_small.png")).convert_alpha()
-GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_green_small.png")).convert_alpha()
-BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_blue_small.png")).convert_alpha()
-
-# Nave do Jogador
-YELLOW_SPACE_player = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png")).convert_alpha()
-
-# Lasers
-RED_LASERS = pygame.image.load(os.path.join("assets", "pixel_laser_red.png")).convert_alpha()
-GREEN_LASERS = pygame.image.load(os.path.join("assets", "pixel_laser_green.png")).convert_alpha()
-BLUE_LASERS = pygame.image.load(os.path.join("assets", "pixel_laser_blue.png")).convert_alpha()
-YELLOW_LASERS = pygame.image.load(os.path.join("assets", "pixel_laser_yellow.png")).convert_alpha()
-'''
-# Imagem de fundo
-# BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-black.png")).convert_alpha(), (WIDTH, HEIGHT))
-# BG_2 = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-black-artic.png")).convert_alpha(), (WIDTH, HEIGHT))
-# BG_3 = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-stars.png")).convert_alpha(), (WIDTH, HEIGHT))
-# BG_4 = pygame.transform.scale(pygame.image.load(os.path.join("assets", "glitch-psychedelic.png")).convert_alpha(), (WIDTH, HEIGHT))
-'''
-# Efeitos Sonoros - Música de fundo
-music = pygame.mixer.music.load('futurama_theme.mp3')   # Música de Fundo
-# Loop da Música de Fundo
-pygame.mixer.music.play(-1)
-# Volume da Música de Fundo
-pygame.mixer_music.set_volume(0.3)
-
-# Efeitos Sonoros - Laser sound
-laser_sound = pygame.mixer.Sound('laser_wrath.wav')
-laser_sound.set_volume(0.1)             # Determinando o volume do efeito sonoro
-
-# Efeitos Sonoros - Larger explosion sound
-larger_explosion_sound = pygame.mixer.Sound('larger_explosion.wav')
-larger_explosion_sound.set_volume(0.2)  # Determinando o volume do efeito sonoro
-
-# Efeitos Sonoros - Smaller explosion sound
-smaller_explosion_sound = pygame.mixer.Sound('smaller_explosion.wav')
-smaller_explosion_sound.set_volume(0.2) # Determinando o volume do efeito sonoro
-
-# Efeitos Sonoros - Enemy laser sound
-enemy_laser_sound = pygame.mixer.Sound('enemy_laser.wav')
-enemy_laser_sound.set_volume(0.1)       # Determinando o volume do efeito sonoro
-'''
-
-
 def main():   
     run = True                      # Determina que o jogo está rodando
     FPS = 60                        # Frames por segundo

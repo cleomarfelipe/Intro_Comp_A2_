@@ -38,9 +38,6 @@ larger_explosion_sound.set_volume(0.2)  # Determinando o volume do efeito sonoro
 smaller_explosion_sound = pygame.mixer.Sound('smaller_explosion.wav')
 smaller_explosion_sound.set_volume(0.2) # Determinando o volume do efeito sonoro
 
-# Efeitos Sonoros - Enemy laser sound
-enemy_laser_sound = pygame.mixer.Sound('enemy_laser.wav')
-enemy_laser_sound.set_volume(0.1)       # Determinando o volume do efeito sonoro
 
 
 class Laser:

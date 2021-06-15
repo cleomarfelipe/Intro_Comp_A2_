@@ -3,7 +3,7 @@ import os
 
 WIDTH, HEIGHT = 750, 750 
 
-WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Shooter Tutorial")
 
 BG = pygame.transform.scale(pygame.image.load(
