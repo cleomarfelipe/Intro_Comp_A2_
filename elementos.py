@@ -2,7 +2,7 @@ import pygame
 import os
 from fundo import HEIGHT
 
-pygame.display.set_mode()
+#pygame.display.set_mode()
 pygame.mixer.init()
 
 # Carregando as imagens
@@ -37,8 +37,6 @@ larger_explosion_sound.set_volume(0.2)  # Determinando o volume do efeito sonoro
 # Efeitos Sonoros - Smaller explosion sound
 smaller_explosion_sound = pygame.mixer.Sound('smaller_explosion.wav')
 smaller_explosion_sound.set_volume(0.2) # Determinando o volume do efeito sonoro
-
-
 
 class Laser:
     def __init__(self, x, y, img):
