@@ -21,6 +21,11 @@ No nosso jogo é possível se movimentar para qualquer direção na tela, por me
 
 	Não é possível sair dos limites da tela do jogo.
 	Você deve manter os botões pressionados para se movimentar.
+
+- Como jogar
+Basta desviar dos disparos e destruir as naves inimigas que virão na sua direção. 
+Colidir com os disparos ou com as naves fará com que você leve dano.
+Deixar que as naves chegem ao final da tela reduzirá o seu número de vidas.
 	
 - Inicialização do jogo
 Após compilar o programa você verá uma nova janela aberta. Nela está o nosso jogo com o menu principal. 
