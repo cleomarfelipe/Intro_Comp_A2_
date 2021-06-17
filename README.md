@@ -14,8 +14,10 @@ No nosso jogo é possível se movimentar para qualquer direção na tela, por me
 	A: Se mover para a esquerda
 	S: Se mover para baixo
 	D: Se mover para a direita
+	P: pausa o jogo	
 	
 	Também é possível atirar nas naves inimigas, por meio da barra de ESPAÇO.
+	
 	As naves inimigas surgem de forma aleatória em diferentes posições da tela e se movem para
 	os lados e para baixo.
 
@@ -33,6 +35,8 @@ Para começar a jogar, basta clicar com mouse - botão direito ou esquerdo. Assi
 já poderá se divertir.
 
 - Função Pause
+Ao pausar o jogo, você pode resumir clicando em qualquer tecla, exceto a tecla P, pois ela que aciona o pause.
+Enquanto pausado, não é possível fechar o jogo. Para fechar, é necessário resumir o jogo e fechar normalmente.
 
 - Sair e fechar o jogo
 Para fechar o jogo, basta retornar ao menu principal - aquele que você viu assim que inicializou o programa -

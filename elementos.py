@@ -10,7 +10,7 @@ funcionamento do jogo.
 import pygame
 import os
 import random
-from fundo import WIDTH, HEIGHT
+from fundo import HEIGHT
 
 # Carregando as imagens - NAVES INIMIGAS;
 RED_SPACE_SHIP = pygame.image.load(
@@ -49,7 +49,7 @@ music = pygame.mixer.music.load('futurama_theme.mp3')   # Música de Fundo
 # Loop da Música de Fundo
 pygame.mixer.music.play(-1)
 # Volume da Música de Fundo
-pygame.mixer_music.set_volume(0.3)
+pygame.mixer_music.set_volume(0.2)
 
 # Efeitos Sonoros - Laser sound
 laser_sound = pygame.mixer.Sound('laser_wrath.wav')
@@ -240,39 +240,6 @@ class Enemy(Ship):
         # de forma aleatória;
         self.y += vel
         self.x += random.randrange(-1, 1)
-        # self.x += vel
-        
-        # if self.x + vel + self.ship_img.get_width() < WIDTH:
-        #     while self.x + vel + self.ship_img.get_width() < WIDTH:
-        #         self.x += vel
-        # if self.x - vel > 0:
-        #     while self.x - vel > 0:
-        #         self.x -= vel
-        
-        # self.x += vel
-        # if self.x + self.ship_img.get_width() > WIDTH:
-        #     vel 
-            
-        # if self.x + vel + self.ship_img.get_width() < WIDTH:
-        #     #vel *= -1
-        #     self.x -= vel
-        # elif self.x - vel > 0:
-        #     #vel *= -1
-        #     self.x += vel
-        
-        #self.x += vel
-        
-        
-        # self.vel_x = random.randrange(-10, 10)
-        # if self.x + vel_x < self.ship_img.get_width():
-        #     self.x += 50
-        # if self.x + vel_x > WIDTH - self.ship_img.get_width():
-        #     self.x -= 50
-        # else:
-        #     self.x += vel_x
-        
-        #if self.x + random.randrange(-5, 5) > 0 + self.ship_img.get_width() and  self.x + random.randrange(-5, 5) < WIDTH:
-        #   self.x += random.randrange(-5, 5)
     
     # Função que determina o disparo dos lasers inimigos;
     def shoot(self):

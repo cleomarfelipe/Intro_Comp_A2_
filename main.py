@@ -182,11 +182,10 @@ def main():
         if keys[pygame.K_SPACE]:
             player.shoot()
         # Botão de pause - Não funciona
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if keys[pygame.K_p]:
-                    pause = True
-                    paused()
+        if keys[pygame.K_p]:
+            paused()
+            if keys[pygame.K_p]:
+                not paused()
         
         # Repetição que determina o movimento dos lasers, bem como sua aparição;
         for enemy in enemies[:]:
@@ -251,41 +250,26 @@ def main_menu():
                 main()
     pygame.quit()
 
+# Função que pausa o jogo;
 def paused():
+    # Variável que determina que o jogo está pausado;
+    pause = True
+    
+    # Mensagem que é exibida na tela;
     pause_font = pygame.font.SysFont("comicsans", 50)
-    pause_label = pause_font.render("Paused", 1, (255, 255, 255))
+    pause_label = pause_font.render("Paused, press any keybord key to resume", 1, (255, 255, 255))
     WIN.blit(pause_label, (WIDTH / 2 - pause_label.get_width() / 2, 350))
     
+    # Atualiza a tela do pygame;
+    pygame.display.flip()
     
-    
-    # largeText = pygame.font.SysFont("comicsansms", 50)
-    # TextSurf, TextRect = text_objects("Paused", largeText)
-    # TextRect.center = ((display_width/2),(display_height/2))
-    # gameDisplay.blit(TextSurf, TextRect)
-    
-    keys = pygame.key.get_pressed()
-    
-    pause = True
-    while pause:
+    # Enquanto o jogo está pausado...
+    while pause: 
+        # Pressione qualquer tecla para fechar o pause;
         for event in pygame.event.get():
-
-            if event.type == pygame.QUIT:
-                run =  False
             if event.type == pygame.KEYDOWN:
-                if keys[pygame.K_p]:
-                    pause = False
-            # if event.type == pygame.KEYDOWN:
-            #     if event.key == K_p:
-            #         pause = False
-                
-        #gameDisplay.fill(white)
-        # if keys[pygame.K_SPACE]:
-        #     player.shoot()
+                pygame.display.update()
+                pause = False
 
-        #button("Continue",150,450,100,50,green,bright_green,unpause)
-        #button("Quit",550,450,100,50,red,bright_red,quitgame)
-
-        pygame.display.update()
-        #clock.tick(15) 
-
+# Chamando a função que inicia o jogo;
 main_menu()

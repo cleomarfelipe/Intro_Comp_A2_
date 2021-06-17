@@ -41,13 +41,13 @@ BG_2 = pygame.transform.scale(pygame.image.load(
 
 # BG_3 (BackGround) recebe a terceira imagem que será o plano de fundo do nosso jogo;
 BG_3 = pygame.transform.scale(pygame.image.load(
-    os.path.join("assets", "background-stars.png")).convert_alpha(), 
+    os.path.join("assets", "scrolling-space.png")).convert_alpha(), 
     (WIDTH, HEIGHT))
 
 # BG_4 (BackGround) recebe a quarta e última imagem que será o plano de fundo 
 # do nosso jogo;
 BG_4 = pygame.transform.scale(pygame.image.load(
-    os.path.join("assets", "glitch-psychedelic.png")).convert_alpha(),
+    os.path.join("assets", "outerspace-49.gif")).convert_alpha(),
     (WIDTH, HEIGHT))
 
 # No arquivo main.py há os códigos responsáveis pelo rolamento das imagens de 
