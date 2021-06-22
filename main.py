@@ -193,7 +193,7 @@ def main():
             enemy.move_lasers(laser_vel, player)
             
             # Chance aleatória de um inimigo atirar;
-            if random.randrange(0, 2 * 60) == 1:
+            if random.randrange(0, 1 * 60) == 1:
                 enemy.shoot()
             # Impedir que os inimigos saiam da tela do jogo;
             if enemy.x > WIDTH - 2 * enemy.ship_img.get_width():

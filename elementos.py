@@ -82,7 +82,7 @@ presentes na classe geral das naves
 '''
 
 # Classe do laser
-class Laser:
+class Laser(pygame.sprite.Sprite):
     # Variáveis que determinam a posição relativa aos eixos x e y;
     # Outra variável que recebe o respectivo sprite do laser;
     def __init__(self, x, y, img):
@@ -92,6 +92,9 @@ class Laser:
         # Aqui determinamos a superfície de contato do sprite. Será útil para
         # determinar a colisão dentro do jogo;
         self.mask = pygame.mask.from_surface(self.img)
+        # Aqui usamos a função get_rect(). Ela será importante na hora de colidir
+        # os objetos;
+        self.rect = self.img.get_rect()
         
     # Função que "desenha" o laser no jogo;
     def draw(self, window):
@@ -111,7 +114,7 @@ class Laser:
         return collide(self, obj)
 
 # Classe geral das naves
-class Ship:
+class Ship(pygame.sprite.Sprite):
     # Cooldown dos disparos
     COOLDOWN = 30
     
@@ -182,6 +185,9 @@ class Player(Ship):
         self.laser_img = YELLOW_LASERS
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
+        # Aqui usamos a função get_rect(). Ela será importante na hora de colidir
+        # os objetos;
+        self.rect = self.ship_img.get_rect()
 
     # Função que determina o movimento dos lasers disparados pelo jogador;
     def move_lasers(self, vel, objs):
@@ -233,13 +239,16 @@ class Enemy(Ship):
         super().__init__(x, y, health)
         self.ship_img, self.laser_img = self.COLOR_MAP[color]
         self.mask = pygame.mask.from_surface(self.ship_img)
-
+        # Aqui usamos a função get_rect(). Ela será importante na hora de colidir
+        # os objetos;
+        self.rect = self.ship_img.get_rect()
+        
     # Função que determina o movimento das naves inimigas;
     def move(self, vel):
         # Os inimigos se movem para baixo de forma constante e para os lados 
         # de forma aleatória;
         self.y += vel
-        self.x += random.randrange(-1, 1)
+        #self.x += random.randrange(-1, 1)
     
     # Função que determina o disparo dos lasers inimigos;
     def shoot(self):
@@ -249,7 +258,14 @@ class Enemy(Ship):
             self.cool_down_counter = 1
 
 # Função que determina a colisão de dois objetos;
+'''
+Combinamos o nosso uso de mask e rect a fim de criar a função que determina as
+colisões dos objetos. Utilizamso a função collide_rect(), da Classe mãe 
+pygame.sprite.Sprite e a função overlap() do pygame.
+'''
 def collide(obj1, obj2):
+    col = pygame.sprite.collide_rect(obj1, obj2)
     offset_x = obj2.x - obj1.x
     offset_y = obj2.y - obj1.y
-    return obj1.mask.overlap(obj2.mask, (offset_x, offset_y)) != None
+    if col == True:
+        return obj1.mask.overlap(obj2.mask, (offset_x, offset_y)) != None
